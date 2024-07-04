@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="js/inputmask.min.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo header__logo">skb.</div>
+            <form action="#" class="header__form">
+                <input data-filter="true" type="text" placeholder="Введите запрос" class="header__input">
+            </form>
+        </div>
+    </header>
+    <main>
+        <section class="clients">
+            <div class="container clients__container">
+                <h2 class="title clients__title">Клиенты</h2>
+                <div class="clients__table-wrap">
+                    <table class="clients__table table">
+                        <thead>
+                            <tr>
+                                <th class="table__header table__header--id">
+                                    <div class="table__header-wrap">
+                                        <span>ID</span>
+                                        <img class="table__arrow table__arrow--transform" src="img/arrow-down.svg"
+                                            alt="">
+                                    </div>
+                                </th>
+                                <th class="table__header table__header--fio">
+                                    <div class="table__header-wrap">
+                                        <span>Фамилия Имя Отчество</span>
+                                        <img class="table__arrow" src="img/arrow-down.svg" alt="">
+                                        <div class="table__letters">
+                                            <span>Я</span>
+                                            <span>-</span>
+                                            <span>А</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="table__header table__header--create">
+                                    <div class="table__header-wrap">
+                                        <span class="table__header-text">Дата и время создания</span>
+                                        <span class="table__header-img">
+                                            <img src="./img/arrow-down.svg" alt="" class="table__arrow">
+                                        </span>
+                                    </div>
+                                </th>
+                                <th class="table__header table__header--update">
+                                    <div class="table__header-wrap">
+                                        <span class="table__header-text">Последние изменения</span>
+                                        <span class="table__header-img">
+                                            <img src="./img/arrow-down.svg" alt="" class="table__arrow">
+                                        </span>
+                                    </div>
+                                </th>
+                                <th class="table__header">Контакты</th>
+                                <th class="table__header">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body" id="clients-table">
+                            <tr id="preloader" class="preloader">
+                                <td class="preloader__loader">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#popup" class="clients__btn popup-btn">
+                    <img src="img/client.svg" alt="">
+                    <div class="clients__btn-text">Добавить клиента</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="popup" class="popup popup--add">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a class="popup__close"></a>
+                <h3 class="title popup__title">Новый клиент</h3>
+                <form class="popup__form" action="#">
+                    <div class="popup__input-wrap input-parent">
+                        <input data-required="true" id="surname" placeholder="Фамилия*" type="text"
+                            class="popup__input">
+                    </div>
+                    <div class="popup__input-wrap input-parent">
+                        <input data-required="true" id="name" placeholder="Имя*" type="text" class="popup__input">
+                    </div>
+                    <div class="popup__input-wrap input-parent">
+                        <input data-required="true" id="lastname" placeholder="Отчество" type="text"
+                            class="popup__input">
+                    </div>
+                    <div class="popup__area">
+                        <div class="popup__contacts-wrap"></div>
+                        <button type="button" class="popup__btn popup-add btn-reset">
+                            <img src="img/add.svg" alt="">
+                            <div class="popup-add__text">Добавить контакт</div>
+                        </button>
+                    </div>
+                    <button class="popup__btn popup-save btn-reset">Сохранить</button>
+                    <button type="button" class="popup__btn popup-cancel btn-reset">Отмена</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-change" class="popup popup--change">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a class="popup__close"></a>
+                <div class="popup__title-wrap">
+                    <h3 class="title popup__title popup__title--change">Изменить данные</h3>
+                    <span class="popup__id"></span>
+                </div>
+                <form class="popup__form" action="#">
+                    <div class="popup__input-wrap input-parent">
+                        <span class="popup__input-descr">Фамилия<span>*</span></span>
+                        <input data-required="true" id="surname-change" placeholder="Фамилия*" type="text"
+                            class="popup__input">
+                    </div>
+                    <div class="popup__input-wrap input-parent">
+                        <span class="popup__input-descr">Имя<span>*</span></span>
+                        <input data-required="true" id="name-change" placeholder="Имя*" type="text"
+                            class="popup__input">
+                    </div>
+                    <div class="popup__input-wrap input-parent">
+                        <span class="popup__input-descr">Отчество</span>
+                        <input data-required="true" id="lastname-change" placeholder="Отчество" type="text"
+                            class="popup__input">
+                    </div>
+                    <div class="popup__area">
+                        <div class="popup__contacts-wrap"></div>
+                        <button type="button" class="popup__btn popup-add btn-reset">
+                            <img src="img/add.svg" alt="">
+                            <div class="popup-add__text">Добавить контакт</div>
+                        </button>
+                    </div>
+                    <button class="popup__btn popup-save btn-reset">Сохранить</button>
+                    <button type="button" class="popup__btn popup-delete-client btn-reset">Удалить клиента</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-delete" class="popup popup--delete">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a class="popup__close"></a>
+                <h3 class="title popup__title">Удалить клиента</h3>
+                <p class="popup__descr">
+                    Вы&nbsp;действительно хотите удалить данного клиента?
+                </p>
+                <button type="submit" class="popup__btn popup-save popup-delete btn-reset">Удалить</button>
+                <button type="button" class="popup__btn popup-cancel btn-reset">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
